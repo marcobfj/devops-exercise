@@ -19,13 +19,17 @@ jobs:
 
       - name: Try the cluster !
         run: kubectl get pods -A
-    
+
+      - name: Build image
+        run: |
+          eval $(minikube -p minikube docker-env)
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/devops-exercise:latest .
+          echo -n "verifying images:"
+          docker images
+      
       - name: Deploy to minikube
         run:
           kubectl apply -f kubernetes/deploy.yml
-
-      - name: Try the cluster !
-        run: kubectl get pods -A
           
       - name: Test service URLs
         run: |
