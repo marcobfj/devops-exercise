@@ -28,5 +28,6 @@ jobs:
         run: |
           minikube service list
           minikube service devops-exercise --url
-          echo "------------------opening the service------------------"
-          curl $(minikube service devops-exercise --url)        
+          echo "------------------opening the service------------------"     
+          for i in {1..$[ $RANDOM % 10 + 1 ]}; do curl -X POST $(minikube service devops-exercise --url); done
+          curl $(minikube service devops-exercise --url)   
