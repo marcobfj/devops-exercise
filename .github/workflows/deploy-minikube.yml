@@ -27,6 +27,6 @@ jobs:
       - name: Test service URLs
         run: |
           minikube service list
-          minikube service example --url
+          minikube service devops-exercise --url
           echo "------------------opening the service------------------"
           curl $(minikube service example --url)        
