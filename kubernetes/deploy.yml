@@ -15,7 +15,7 @@ spec:
             containers:
                 - name: devops-exercise
                   imagePullPolicy: Never # It is this way to be able to run a step in github actions
-                  image: marcobfj/devops-exercise:master
+                  image: marcobfj/devops-exercise:latest
                   resources:
                       limits:
                           cpu: 50m
