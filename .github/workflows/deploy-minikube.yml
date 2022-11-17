@@ -22,7 +22,7 @@ jobs:
       
       - name: Deploy to minikube
         run:
-          kubectl apply -f kubernetes/deploy.yml && sleep 5
+          kubectl apply -f kubernetes/deploy.yml && sleep 10
           
       - name: Test service URLs
         run: |
