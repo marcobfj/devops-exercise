@@ -29,4 +29,4 @@ jobs:
           minikube service list
           minikube service devops-exercise --url
           echo "------------------opening the service------------------"
-          curl $(minikube service example --url)        
+          curl $(minikube service devops-exercise --url)        
