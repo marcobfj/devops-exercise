@@ -1,8 +1,13 @@
 name: CI
+
 on:
-  - pull_request
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
 jobs:
-  job1:
+  deploy_to_minikube:
     runs-on: ubuntu-latest
     name: Deploy to minikube
     steps:
